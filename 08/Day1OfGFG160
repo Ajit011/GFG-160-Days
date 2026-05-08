@@ -1,0 +1,52 @@
+Date->08/05/2026
+Topic-> Array 
+  Q1.Second Largest -- Completed In a Single Loop
+  Q2.Move all Zero To End ->>>
+  Code --
+  class Solution {
+    void pushZerosToEnd(int[] arr) {
+        // code here
+        int j = 0;
+        int n = arr.length;
+        for(int i=0;i<n;i++){
+            if(arr[i]!=0){
+                int temp = arr[i];
+                arr[i] = arr[j];
+               arr[j] = temp;
+               j++;
+            }
+        }
+        
+    }
+}
+
+Q3->Reverse An array -> O(n)
+Q4--> Rotate Array 
+//   Approach --we have to rotate left 
+//   ** ( if arr.length<k) {
+//   k = arr.length%k--
+//     }
+// code-->
+class Solution {
+   public  static void rotate(int i,int j,int arr[]){
+        while(i<j){
+            int temp = arr[i];
+            arr[i] = arr[j];
+            arr[j] = temp;
+            i++;
+            j--;
+        }
+    }
+    static void rotateArr(int arr[], int d) {
+        int n = arr.length;
+        int k = d;
+        if(d>n) {
+            k = d%n;
+        }
+        rotate(0,k-1,arr);
+         rotate(k,n-1,arr);
+         rotate(0,n-1,arr); 
+    }
+}
+// Time Complexity-> O(n) * 3 ~ O(n)
+  
