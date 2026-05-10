@@ -22,11 +22,27 @@ we traverse a loop idx =1 -> and check if(arr[i]>arr[i-1] , prifit+=arr[i]-arr[i
         return profit;
     }
 }
-T.c-> O(n) 
+T.c-> O(n)  
 
 Q.8. Stock buy and sell and return maximum profit (One Trajection allow) 
 Approach -> initialize mxProfit = 0 ; minSoFar = Integer.MIN_VALUE;
 loop i =0 to n-1 nd update minSoFar = Math.min(minSoFar,arr[i])
 mx = Math.max(mx,arr[i]-minSoFar);
 return mx;
+
+code->>
+class Solution {
+    public int maxProfit(int[] arr) {
+        // Code here
+        int minSoFar = Integer.MAX_VALUE;
+        int mx = 0;
+        for(int i=0;i<arr.length;i++){
+            minSoFar = Math.min(arr[i],minSoFar);
+            mx = Math.max(mx,arr[i]-minSoFar);
+        }
+        return mx;
+    }
+}
+
+T.C-> O(n) 
 
