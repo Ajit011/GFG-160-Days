@@ -1,0 +1,11 @@
+Q.7 Stock buy and sell Multiple Times -> 
+Problem Statement , We have given Stock prices where we can sell the buy and sell the share multiple times 
+* (According to ShareMarket rules like if We buy share on t0 and sell the share on t2 then we can never buy 
+ on the price of t0 , we can only buy on t2 Basic---> )T2 will decide the price for next share.... 
+
+like an array contins share price  -> 100,180 ,260 ,310 , 40 , 535 , 695 . 
+if we buy on t0 nd sell on t1 then we can only do 1 things--
+ 1)  we can buy on t1 , we can sell on next t2,t3,t4 we never came back and buy t1 or sell t1.
+
+* Approach-> 
+we traverse a loop idx =1 -> and check if(arr[i]>arr[i-1] , prifit+=arr[i]-arr[i-1]; nd return profit;
