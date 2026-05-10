@@ -9,3 +9,24 @@ if we buy on t0 nd sell on t1 then we can only do 1 things--
 
 * Approach-> 
 we traverse a loop idx =1 -> and check if(arr[i]>arr[i-1] , prifit+=arr[i]-arr[i-1]; nd return profit;
+
+// code-> class Solution {
+    public int maxProfit(int arr[]) {
+        // code here
+        int profit = 0;
+        for(int i=1;i<arr.length;i++){
+            if(arr[i]>arr[i-1]){
+                profit+=arr[i]-arr[i-1];
+            }
+        }
+        return profit;
+    }
+}
+T.c-> O(n) 
+
+Q.8. Stock buy and sell and return maximum profit (One Trajection allow) 
+Approach -> initialize mxProfit = 0 ; minSoFar = Integer.MIN_VALUE;
+loop i =0 to n-1 nd update minSoFar = Math.min(minSoFar,arr[i])
+mx = Math.max(mx,arr[i]-minSoFar);
+return mx;
+
